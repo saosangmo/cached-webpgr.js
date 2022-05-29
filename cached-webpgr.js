@@ -31,9 +31,11 @@ function _cacheScript(name, version, url) {
             content: xmlhttp.responseText,
             version: version
           }));
-        } else {
+        } 
+        /* else {
           console.warn('error loading '+url);
         }
+        */
       }
     }
     xmlhttp.open("GET", url, true);
@@ -87,7 +89,7 @@ function _injectScript(content, url, name, version, callback) {
     return;
   }
   var s = document.createElement('script');
-  s.type = "text/javascript";
+  //  s.type = "text/javascript";
   var scriptContent = document.createTextNode(c.content);
   s.appendChild(scriptContent);
   document.getElementsByTagName("head")[0].appendChild(s);
